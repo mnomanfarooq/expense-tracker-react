@@ -1,0 +1,35 @@
+import React, {useContext} from 'react'
+import { GlobalContext } from '../context/GlobalState';
+import CountUp from 'react-countup';
+
+export const IncomeExpenses = () => {
+  const { transactions } = useContext(GlobalContext);
+
+  const amounts = transactions.map(transaction => transaction.amount);
+
+  const income = amounts
+    .filter(item => item > 0)
+    .reduce((acc, item) => (acc += item), 0);
+
+  const expense = (amounts
+    .filter(item => item < 0)
+    .reduce((acc, item) => (acc += item), 0) * -1);
+
+    return (
+        <>
+        <div className="inc-container">
+        <div>
+          <h4>Income</h4>
+          <p className="money plus">PKR <CountUp start={0} end={income} duration={2} separator="," /></p>
+        </div>
+        </div>
+
+        <div className="exp-container">
+        <div> 
+          <h4>Expense</h4>
+          <p className="money minus">PKR <CountUp start={0} end={expense} duration={2} separator="," /></p>
+        </div>
+        </div>
+        </>
+    )
+}
