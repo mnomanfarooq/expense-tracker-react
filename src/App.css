@@ -10,6 +10,7 @@
 
 
 body {
+  background-size: cover;
   background-image: url("./images/bg.jpg");
   background-attachment: fixed;
   display: flex;
