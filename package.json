@@ -11,7 +11,7 @@
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
     "react-number-format": "^4.4.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "update": "^0.7.4"
   },
   "scripts": {
